@@ -1,3 +1,9 @@
+/**
+ * @author Nicolás Tutor
+ * Se crearon tres funciones para obtener el conjunto de objetos: 
+ * awaitMethod(), promiseMethod() y generatorMethod().
+ */
+
 async function awaitMethod(url) {
     try {
         const response = await fetch(url)
@@ -67,6 +73,7 @@ async function getAlbums(id, callback) {
     }
 }
 
+//Se preserva el órden de las propiedades del objeto
 let desestructurateUser = (array) => array.map(({
     id,
     name,

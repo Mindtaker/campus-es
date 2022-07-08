@@ -34,11 +34,11 @@ const listUsers = function (req, res) {
     switch (req.url) {
         case "/users":
             res.writeHead(200);
-            res.end(JSON.stringify(users));
+            res.end(JSON.stringify(users, null, 2));
             break
         default:
             res.writeHead(404);
-            res.end(JSON.stringify({ statusCode: res.statusCode, message: 'Error: ' + res.statusMessage }));
+            res.end(JSON.stringify({ statusCode: res.statusCode, message: 'Error: ' + res.statusMessage }, null, 2));
     }
 };
 

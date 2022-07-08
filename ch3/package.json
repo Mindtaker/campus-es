@@ -1,0 +1,24 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "Web Server that return User objects in JSON format",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mindtaker/campus-es.git#main"
+  },
+  "keywords": [
+    "users",
+    "http",
+    "json"
+  ],
+  "author": "Nathan Drake <ndrake@uncharted.com> (https://uncharted.com/)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Mindtaker/campus-es/issues"
+  },
+  "homepage": "https://github.com/Mindtaker/campus-es/tree/main#readme"
+}

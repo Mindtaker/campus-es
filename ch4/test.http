@@ -1,0 +1,61 @@
+### Obtener todos los usuarios
+GET http://localhost:3000/users
+
+### Obtener un usuario
+GET http://localhost:3000/users/62d18914658add112e8c19a9
+
+### Crear un usuario
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Clementina Test",
+    "username": "Moriah.Stanton",
+    "email": "Rey.Padberg@karina.biz",
+    "company": "62d0bc3e8b12928199f6fdb3a"
+  }
+
+### Actualizar un usuario
+PUT http://localhost:3000/users/62d18914658add112e8c19a9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "company" : "62d0bc3e8b12928199f3fb3a"
+}
+### Otra actualización de usuario
+PUT http://localhost:3000/users/62d18914658add112e8c19a9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "Juana"
+}
+
+### Borrar un usuario
+DELETE http://localhost:3000/users/62d1815e772143a1440cefc3
+
+### Obtener todas las compañías
+GET http://localhost:3000/companies
+
+### Obtener una compañía
+GET http://localhost:3000/companies/62d0bc468b12928199f6fb3c
+###
+GET http://localhost:3000/companies/sasdasdaqw
+
+### Crear una compañía
+POST http://localhost:3000/companies HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "BMW"
+}
+
+### Actualizar una compañía
+PUT http://localhost:3000/companies/62d1b0148afe196c231b6e96 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "Coca Cola"
+}
+
+### Borrar una compañía
+DELETE http://localhost:3000/companies/62d1b0148afe196c231b6e96

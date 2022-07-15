@@ -13,7 +13,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-    company: { type: mongoose.Schema.ObjectId, ref: 'Company' }
+    company: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Company'
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);

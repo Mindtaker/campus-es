@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const companyModel = require('../models/company');
+const userModel = require('../models/user');
 
 router.route('/')
     .post(async (req, res) => {
@@ -55,6 +56,7 @@ router.route('/:id')
         try {
             const id = req.params.id;
             const data = await companyModel.findByIdAndDelete(id);
+            await userModel.updateMany({company: id}, { $unset: { company: "" }});
             res.send(`La compañia ${data.name} ha sido eliminada`);
         }
         catch (error) {

@@ -16,23 +16,27 @@ router.route('/')
             email: req.body.email,
             company: req.body.company
         });
-        if (await companyModel.findById(data.company)) {
-            try {
+        try {
+            if (data.company) {
+                if (await companyModel.findById(data.company)) {
+                    const dataToSave = await data.save();
+                    res.status(200).json(dataToSave);
+                } else {
+                    res.status(500).json({ message: `La compañia con ID: ${req.body.company} no existe` });
+                }
+            } else {
                 const dataToSave = await data.save();
                 res.status(200).json(dataToSave);
-            } catch (error) {
-                res.status(400).json({ message: error.message });
             }
-        } else {
-            res.status(500).json({ message: `La compañia con ID: ${req.body.company} no existe` });
+        } catch (error) {
+            res.status(400).json({ message: error.message });
         }
     })
     .get(async (req, res) => {
         try {
             const data = await userModel.find().populate('company');
             res.status(200).json(data);
-        }
-        catch (error) {
+        } catch (error) {
             res.status(500).json({ message: error.message });
         }
     });
@@ -43,8 +47,7 @@ router.route('/:id')
             const id = req.params.id;
             const data = await userModel.findById(id).populate('company');
             res.status(200).json(data);
-        }
-        catch (error) {
+        } catch (error) {
             res.status(500).json({ message: error.message });
         }
     })
@@ -70,8 +73,7 @@ router.route('/:id')
 
                 res.status(200).send(result);
             }
-        }
-        catch (error) {
+        } catch (error) {
             res.status(400).json({ message: error.message });
         }
     })
@@ -80,8 +82,7 @@ router.route('/:id')
             const id = req.params.id;
             const data = await userModel.findByIdAndDelete(id);
             res.send(`El usuario ${data.username} fue eliminado`);
-        }
-        catch (error) {
+        } catch (error) {
             res.status(400).json({ message: error.message });
         }
     });

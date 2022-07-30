@@ -8,10 +8,7 @@ import { useAuthContext } from "../contexts/authContext";
 import { useNavigate } from "react-router-dom";
 
 const AllPosts = () => {
-  // const [title, setTitle] = useState("");
-  // const [content, setContent] = useState("");
   const [allPosts, setAllPosts] = useState([]);
-  // const [isCreated, setIsCreated] = useState("");
   const navigate = useNavigate();
 
   const { user } = useAuthContext();
@@ -27,35 +24,9 @@ const AllPosts = () => {
       })
     return () => (mounted = false);
   }, [user.id]);
-
-  // const postTitle = (event) => setTitle(event.target.value);
-
-  // const postContent = (event) => setContent(event.target.value);
-
-  // const savePost = (event) => {
-  //   event.preventDefault();
-  //   setPost(title, content, user.id);
-  // };
-
-  // const onCreateButton = () => {
-  //   setIsCreated(!isCreated);
-  // };
-  
-  // if (isCreated) {
-  //   return (
-  //     <div>
-  //       <CreatePost
-  //         postTitle={postTitle}
-  //         postContent={postContent}
-  //         savePost={savePost}
-  //         />
-  //     </div>
-  //   );
-  // }
   
   const onCreateButton = () => {
     navigate('/createpost');
-    // setIsCreated(!isCreated);
   };
   
   return (

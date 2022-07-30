@@ -24,7 +24,6 @@ router
           email: req.body.email,
           password: req.body.password,
         });
-        // const data = await userModel.findOne({ email: req.body.email });
         if (data !== null) {
           res.status(200).json(data);
         } else {

@@ -11,3 +11,8 @@ _Aún faltan algunas modificaciones._
 *  Node
 *  Express
 *  MongoDB
+
+## Funcionamiento 💻
+
+*  React funcionando en el puerto 3000
+*  Express funcionando en el puerto 3333
